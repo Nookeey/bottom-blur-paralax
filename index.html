@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <title>Document</title>
+
+    <style>
+        .box { background: #eeeeee; height: 1500px; }
+        .banner-bottom { background: url('baner-bottom.jpg') no-repeat bottom center; background-attachment: fixed; min-height: 440px; }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="box">
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href=""><div class="banner-bottom"></div></a>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>    
+
+    
+    <script>
+        /** BLUR BOTTOM BANER */
+        $(window).scroll(function() {
+            var bgHeight = 0;
+            var blur = 0;
+            var aa = $(document).height();
+            var bb = 0;
+            
+            bgHeight = $(".banner-bottom").height();
+            bb = $(window).scrollTop() + $(window).height();
+
+            if($(window).scrollTop() + $(window).height() > $(document).height() - bgHeight) {
+                blur = (aa - bb) / 50;  		
+                $(".banner-bottom").css({"-webkit-filter": "blur("+blur+"px)","-moz-filter": "blur("+blur+"px)","filter": "blur("+blur+"px)" });
+            }
+        });
+        /** END -> BLUR BOTTOM BANER */
+    </script>
+</body>
+</html>
